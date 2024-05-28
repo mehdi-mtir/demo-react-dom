@@ -16,10 +16,25 @@ var livres = [
     },
 ];
 
-function changerLeTitre(){
-    var title = document.getElementById("page-title");
-    title.innerText = "Nouveau title";
-}
+//version sans React
+/*function changerLeTitre(){
+    //var title = document.getElementById("page-title");
+    //title.innerText = "Nouveau title";
+
+    //Récupérer l'élémént div (racine)
+    let div = document.getElementById("page-title");
+
+    //Créer un nouvel objet DOM h1 (un nouveau noeud);
+    const h1Element = document.createElement("h1");
+    h1Element.textContent = "Démo DOM sans React";
+    h1Element.className = "title";
+
+    //rattacher le nouvel élément h1 à la div (racine)
+    div.append(h1Element);
+}*/
+
+
+
 
 //Programmation impérative
 function afficherLaListeDesLivres(){

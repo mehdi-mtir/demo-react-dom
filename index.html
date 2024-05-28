@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body >
-    <div>
-        <h1 id="page-title">Démo DOM</h1>
+    <div id="page-title">
+        
         <p>Hello world</p>
         <button onclick="changerLeTitre()" >Changer le titre</button>
     </div>
@@ -17,5 +20,29 @@
         </ul>
     </div>
     <script src="demo-dom.js"></script>
+
+    <script type="text/babel">
+        //version avec React
+        function changerLeTitre(){
+            //Récupérer l'élément div (racine)
+            let divRoot = document.getElementById("page-title");
+
+            //Créer un nouveau composant h1
+            /*const h1Element = React.createElement(
+                "h1",
+                {
+                    className : "title"
+                },
+                "Démo avec React"
+            )*/
+            const h1Element = <div >
+                <h1> <a href="http://www.google.fr">Démo</a> avec React et JSX </h1>
+                <p>test</p>
+            </div>;
+
+            //Injecter le nouvel élément h1 sous le div
+            ReactDOM.render(h1Element, divRoot);
+        }
+    </script>
 </body>
 </html>
